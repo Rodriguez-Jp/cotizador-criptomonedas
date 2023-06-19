@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import imagenCriptos from "./img/imagen-criptos.png";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="md:grid md:grid-cols-2 max-w-6xl mx-auto mt-20">
+        <div>
+          <img
+            src={imagenCriptos}
+            alt="imagen criptomonedas"
+            className="md:h-3/4 h-2/4 md:max-w-full max-w-[80%] mx-auto"
+          />
+        </div>
+        <div>
+          <h1 className="text-center font-bold text-4xl text-white after:content-[' '] after:w-[100px] after:h-2 after:bg-[#66A2FE] after:block after:mx-auto after:my-3">
+            Cotizador de criptomonedas al instante
+          </h1>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
