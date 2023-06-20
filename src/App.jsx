@@ -1,3 +1,4 @@
+import Formulario from "./components/Formulario";
 import imagenCriptos from "./img/imagen-criptos.png";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <h1 className="text-center font-bold text-4xl text-white after:content-[' '] after:w-[100px] after:h-2 after:bg-[#66A2FE] after:block after:mx-auto after:my-3">
             Cotizador de criptomonedas al instante
           </h1>
+          <Formulario />
         </div>
       </div>
     </>
