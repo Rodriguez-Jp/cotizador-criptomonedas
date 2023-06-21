@@ -1,7 +1,7 @@
 import { useState } from "react";
-import monedas from "../monedas";
+import { generarRandomKey } from "../helpers/helpers";
 
-const useSelectMoneda = (label = "Elige tu moneda") => {
+const useSelectMoneda = (label = "Elige tu moneda", opciones = []) => {
   const [state, setState] = useState("");
   const selectMonedas = () => (
     <>
@@ -13,9 +13,9 @@ const useSelectMoneda = (label = "Elige tu moneda") => {
           className="text-black text-xl p-3 rounded-lg mt-5"
         >
           <option value="">Seleccione</option>
-          {monedas.map((moneda) => (
-            <option key={moneda.id} value={moneda.id}>
-              {moneda.nombre}
+          {opciones.map((opcion) => (
+            <option key={generarRandomKey()} value={opcion.id}>
+              {opcion.nombre}
             </option>
           ))}
         </select>
