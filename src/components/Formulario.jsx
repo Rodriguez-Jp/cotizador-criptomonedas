@@ -5,29 +5,30 @@ import Alerta from "./Alerta";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
-const Formulario = () => {
+const Formulario = ({ setMonedas }) => {
   const [cripto, setCripto] = useState([]);
-  const [state, SelectMoneda] = useSelectMoneda("Elige tu moneda", monedas);
+  const [monedaState, SelectMoneda] = useSelectMoneda(
+    "Elige tu moneda",
+    monedas
+  );
   const [criptoState, SelectCriptoMoneda] = useSelectMoneda(
     "Elige tu CriptoMoneda",
     cripto
   );
   const [alerta, setAlerta] = useState({});
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(state, criptoState);
 
     //Validacion formulario
 
-    if (state === "" || criptoState === "") {
+    if (monedaState === "" || criptoState === "") {
       setAlerta({ msg: "Por favor rellene todos los campos", error: true });
       return;
     }
 
     setAlerta({});
-
-    console.log("lleno");
+    setMonedas({ monedaState, criptoState });
   };
 
   useEffect(() => {
